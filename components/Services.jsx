@@ -1,4 +1,6 @@
+"use client";
 import { siteData } from "@/data/siteData";
+import { motion } from "framer-motion";
 import { 
   HomeModernIcon, 
   BuildingOfficeIcon, 
@@ -28,10 +30,31 @@ export default function Services() {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
-    <section id="services" className="py-20 md:py-28 bg-white">
+    <section id="services" className="py-20 md:py-28 bg-white overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <div className="flex items-center justify-center space-x-2 mb-4">
             <span className="w-8 h-[2px] bg-gold"></span>
             <span className="text-gold font-semibold uppercase tracking-wider text-sm">
@@ -45,18 +68,26 @@ export default function Services() {
           <p className="text-gray-600 text-lg">
             Comprehensive real estate solutions designed to help you find, invest, and manage properties with ease and confidence.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8"
+        >
           {services.map((service, index) => (
-            <div 
+            <motion.div 
+              variants={itemVariants}
               key={service.id} 
-              className="group p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-navy hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-gradient-navy hover:shadow-xl transition-all duration-300 relative overflow-hidden"
             >
               {/* Decorative background element on hover */}
               <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gold/10 rounded-full blur-2xl group-hover:bg-gold/20 transition-colors"></div>
               
-              <div className="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center text-navy mb-6 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+              <div className="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center text-navy mb-6 group-hover:bg-gradient-gold group-hover:text-white transition-colors duration-300">
                 {getIcon(service.id)}
               </div>
               
@@ -67,9 +98,9 @@ export default function Services() {
               <p className="text-gray-600 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 relative z-10">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
