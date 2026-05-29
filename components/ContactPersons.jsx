@@ -54,7 +54,7 @@ export default function ContactPersons() {
             
             <div className="mb-6 relative z-10">
               <h3 className="text-2xl font-serif font-bold text-gold mb-1">Main Contact</h3>
-              <p className="text-gray-300 text-sm">Al-Madinah Real Estate</p>
+              <p className="text-gray-300 text-sm">Al-Madina Developers</p>
             </div>
             
             <div className="flex-grow space-y-4 relative z-10">

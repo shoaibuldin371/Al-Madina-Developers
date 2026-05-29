@@ -54,7 +54,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-lg md:text-xl font-bold text-navy leading-tight">
-              Al-Madinah
+              Al-Madina Developers
             </span>
             <span className="text-xs md:text-sm text-gray-600 font-medium">
               Real Estate and Builders

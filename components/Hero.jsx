@@ -34,7 +34,7 @@ export default function Hero() {
       >
         <Image
           src={hero.image}
-          alt="Al-Madinah Real Estate"
+          alt="Al-Madina Developers"
           fill
           className="object-cover"
           priority

@@ -1,12 +1,12 @@
 export const siteData = {
   company: {
-    name: "Al-Madinah Real Estate and Builders",
+    name: "Al-Madina Developers",
     type: "Real Estate and Builders Company",
     logo: "/assets/al-madinah/logo.jpg",
     aboutShort:
       "Welcome to AL Madina Real Estate & Developer! Your go-to destination for dream homes and expert real estate guidance. Join us on the journey of turning dreams into addresses.",
     aboutProfessional:
-      "Al-Madinah Real Estate and Builders helps clients explore residential plots, houses, rental properties, commercial opportunities, and investment options with trusted real estate guidance. The company focuses on clear communication, professional support, and helping clients make confident property decisions.",
+      "Al-Madina Developers helps clients explore residential plots, houses, rental properties, commercial opportunities, and investment options with trusted real estate guidance. The company focuses on clear communication, professional support, and helping clients make confident property decisions.",
   },
   contact: {
     primaryNumber: "0300 4873647",
@@ -14,7 +14,7 @@ export const siteData = {
     email: "almadinaaestate@gmail.com",
     officeLocation:
       "Office No. 21, C Block, Main Boulevard, Zaamin City, Lahore, 54000",
-    messengerName: "Al Madina Estate & Builders",
+    messengerName: "Al-Madina Developers & Builders",
     messengerLink: "https://m.me/almadinaaestate",
     facebookLink: "https://www.facebook.com/almadinaaestate/",
     googleMapsSearch:
@@ -39,11 +39,11 @@ export const siteData = {
     ],
   },
   hero: {
-    heading: "Find Your Dream Property with Al-Madinah Real Estate and Builders",
+    heading: "Find Your Dream Property with Al-Madina Developers",
     subheading:
       "Your trusted destination for dream homes, residential plots, commercial opportunities, rental properties, and expert real estate guidance.",
     description:
-      "Al-Madinah Real Estate and Builders helps clients explore property opportunities in Zaamin City and surrounding Lahore locations with clear guidance, professional support, and reliable communication.",
+      "Al-Madina Developers helps clients explore property opportunities in Zaamin City and surrounding Lahore locations with clear guidance, professional support, and reliable communication.",
     image: "/assets/al-madinah/office-building.jpg",
     trustBadges: [
       "Residential Plots",

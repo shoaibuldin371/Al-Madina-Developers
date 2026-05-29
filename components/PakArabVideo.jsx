@@ -48,7 +48,7 @@ export default function PakArabVideo() {
               
               <div className="pt-6 mt-8 border-t border-gray-200">
                 <p className="font-serif text-2xl text-navy mb-2 flex items-center gap-2 font-bold">
-                  <span>📍</span> Al Madinah Orchard
+                  <span>📍</span> Al-Madina Developers Orchard
                 </p>
                 <p className="text-gold font-medium italic text-lg ml-9">A Modern Standard of Living</p>
                 

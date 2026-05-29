@@ -7,7 +7,7 @@ export default function Footer() {
   const { company, contact, services } = siteData;
 
   const currentYear = new Date().getFullYear();
-  // Use requested year if it's past 2026 or just use 2026 as requested in prompt "© 2026 Al-Madinah Real Estate..."
+  // Use requested year if it's past 2026 or just use 2026 as requested in prompt "© 2026 Al-Madina Developers..."
   const displayYear = "2026";
 
   return (
@@ -31,10 +31,10 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold text-white leading-tight tracking-wide">
-                  Al-Madinah
+                  Al-Madina
                 </span>
                 <span className="text-xs text-gold font-medium uppercase tracking-[0.2em]">
-                  Real Estate
+                  Developers
                 </span>
               </div>
             </div>

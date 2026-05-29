@@ -40,7 +40,7 @@ export default function FeaturedProperties() {
               Featured Property Opportunities
             </h2>
             <p className="text-gray-600 text-lg">
-              Explore selected property options, investment plans, and project updates from Al-Madinah Real Estate and Builders.
+              Explore selected property options, investment plans, and project updates from Al-Madina Developers.
             </p>
           </div>
           <motion.a

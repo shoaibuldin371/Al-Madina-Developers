@@ -40,7 +40,7 @@ export default function Contact() {
             Get In Touch
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy mb-6">
-            Contact Al-Madinah Real Estate
+            Contact Al-Madina Developers
           </h2>
           <p className="text-gray-600 text-lg">
             Ready to explore your next property opportunity? Contact our team today for personalized assistance.
@@ -192,7 +192,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wide">Messenger</p>
-                  <p className="font-bold text-lg">Al Madina Estate</p>
+                  <p className="font-bold text-lg">Al-Madina Developers</p>
                 </div>
               </a>
             </div>
