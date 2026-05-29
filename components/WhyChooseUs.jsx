@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
               Why Choose Al-Madina Developers
             </h2>
             <p className="text-gray-600 mb-8 text-lg">
-              We stand out in the real estate market by providing focused expertise, clear communication, and a commitment to helping you make the best property decisions.
+              We stand out in the property market by providing focused expertise, clear communication, and a commitment to helping you make the best property decisions.
             </p>
             
             <motion.div 

@@ -23,7 +23,7 @@ export default function Location() {
             Visit Our Office
           </h2>
           <p className="text-gray-600 text-lg">
-            We are conveniently located in Zaamin City, Lahore. Drop by for a cup of tea and a discussion about your real estate goals.
+            We are conveniently located in Zaamin City, Lahore. Drop by for a cup of tea and a discussion about your property goals.
           </p>
         </motion.div>
 

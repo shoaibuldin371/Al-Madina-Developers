@@ -34,7 +34,7 @@ export default function ContactPersons() {
             Expert Guidance
           </span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy mb-4">
-            Talk to Our Real Estate Consultants
+            Talk to Our Property Consultants
           </h2>
           <p className="text-gray-600">
             Get in touch with our dedicated professionals who can help you find the perfect property or investment.

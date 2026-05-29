@@ -1,12 +1,12 @@
 export const siteData = {
   company: {
     name: "Al-Madina Developers",
-    type: "Real Estate and Builders Company",
+    type: "Developers Company",
     logo: "/assets/al-madinah/logo.jpg",
     aboutShort:
-      "Welcome to AL Madina Real Estate & Developer! Your go-to destination for dream homes and expert real estate guidance. Join us on the journey of turning dreams into addresses.",
+      "Welcome to Al-Madina Developers! Your go-to destination for dream homes and expert property guidance. Join us on the journey of turning dreams into addresses.",
     aboutProfessional:
-      "Al-Madina Developers helps clients explore residential plots, houses, rental properties, commercial opportunities, and investment options with trusted real estate guidance. The company focuses on clear communication, professional support, and helping clients make confident property decisions.",
+      "Al-Madina Developers helps clients explore residential plots, houses, rental properties, commercial opportunities, and investment options with trusted property guidance. The company focuses on clear communication, professional support, and helping clients make confident property decisions.",
   },
   contact: {
     primaryNumber: "0300 4873647",
@@ -23,7 +23,7 @@ export const siteData = {
       {
         id: 1,
         name: "M. Bilal",
-        role: "Real Estate Consultant",
+        role: "Property Consultant",
         phone: "+92 318 4414063",
         whatsappLink: "https://wa.me/923184414063",
         callLink: "tel:+923184414063",
@@ -41,7 +41,7 @@ export const siteData = {
   hero: {
     heading: "Find Your Dream Property with Al-Madina Developers",
     subheading:
-      "Your trusted destination for dream homes, residential plots, commercial opportunities, rental properties, and expert real estate guidance.",
+      "Your trusted destination for dream homes, residential plots, commercial opportunities, rental properties, and expert property guidance.",
     description:
       "Al-Madina Developers helps clients explore property opportunities in Zaamin City and surrounding Lahore locations with clear guidance, professional support, and reliable communication.",
     image: "/assets/al-madinah/office-building.jpg",

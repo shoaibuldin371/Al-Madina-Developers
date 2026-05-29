@@ -60,7 +60,7 @@ export default function Hero() {
             variants={itemVariants}
             className="inline-block py-1.5 px-4 rounded-full bg-gold/10 text-gold border border-gold/30 text-sm font-semibold tracking-wider mb-6 glass-dark"
           >
-            <span className="text-gradient">PREMIUM REAL ESTATE</span>
+            <span className="text-gradient">PREMIUM PROPERTIES</span>
           </motion.span>
           
           <motion.h1 

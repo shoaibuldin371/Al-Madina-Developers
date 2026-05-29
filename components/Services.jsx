@@ -66,7 +66,7 @@ export default function Services() {
             <span className="w-8 h-[2px] bg-gold"></span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy mb-6">
-            Our Real Estate Services
+            Our Services
           </h2>
           <p className="text-gray-600 text-lg">
             Comprehensive real estate solutions designed to help you find, invest, and manage properties with ease and confidence.

@@ -56,9 +56,7 @@ export default function Navbar() {
             <span className="font-serif text-lg md:text-xl font-bold text-navy leading-tight">
               Al-Madina Developers
             </span>
-            <span className="text-xs md:text-sm text-gray-600 font-medium">
-              Real Estate and Builders
-            </span>
+            
           </div>
         </div>
 

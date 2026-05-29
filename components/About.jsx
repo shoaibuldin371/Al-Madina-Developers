@@ -61,8 +61,8 @@ export default function About() {
             </h2>
             <div className="prose prose-lg text-gray-600 mb-8 relative z-10">
               <p className="mb-4">
-                Welcome to <strong>AL Madina Real Estate & Developer</strong>, your go-to
-                destination for dream homes and expert real estate guidance. We help clients
+                Welcome to <strong>Al-Madina Developers</strong>, your go-to
+                destination for dream homes and expert property guidance. We help clients
                 explore residential plots, houses, rental properties, commercial
                 opportunities, and investment options with confidence.
               </p>
