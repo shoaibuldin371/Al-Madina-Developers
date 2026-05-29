@@ -46,7 +46,10 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-white overflow-hidden">
+    <section id="services" className="py-20 md:py-28 bg-gray-50 overflow-hidden relative">
+      {/* Decorative Orbs */}
+      <div className="absolute top-20 right-0 w-64 h-64 bg-gold rounded-full opacity-5 blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-20 left-0 w-96 h-96 bg-navy rounded-full opacity-5 blur-3xl pointer-events-none"></div>
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -81,21 +84,20 @@ export default function Services() {
             <motion.div 
               variants={itemVariants}
               key={service.id} 
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-gradient-navy hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              className="group p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-gold/50 transition-all duration-500 relative overflow-hidden hover-lift"
             >
               {/* Decorative background element on hover */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gold/10 rounded-full blur-2xl group-hover:bg-gold/20 transition-colors"></div>
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition-all duration-500 transform group-hover:scale-150"></div>
               
-              <div className="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center text-navy mb-6 group-hover:bg-gradient-gold group-hover:text-white transition-colors duration-300">
+              <div className="w-16 h-16 rounded-xl bg-gray-50 shadow-sm flex items-center justify-center text-navy mb-6 group-hover:bg-gradient-gold group-hover:text-white transition-all duration-500 transform group-hover:rotate-3 group-hover:scale-110 relative z-10">
                 {getIcon(service.id)}
               </div>
               
-              <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-white transition-colors duration-300">
+              <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300 relative z-10">
                 {service.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 relative z-10">
+              <p className="text-gray-600 leading-relaxed transition-colors duration-300 relative z-10">
                 {service.description}
               </p>
             </motion.div>

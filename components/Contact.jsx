@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { siteData } from "@/data/siteData";
 import { PhoneIcon, ChatBubbleLeftEllipsisIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const { contact } = siteData;
@@ -24,9 +25,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-gray-50 border-t border-gray-100">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <section id="contact" className="py-20 md:py-28 bg-gray-50 border-t border-gray-100 relative overflow-hidden">
+      <div className="absolute top-0 right-1/3 w-64 h-64 bg-gold rounded-full opacity-5 blur-3xl pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-gold font-semibold uppercase tracking-wider text-sm mb-2 block">
             Get In Touch
           </span>
@@ -36,9 +45,15 @@ export default function Contact() {
           <p className="text-gray-600 text-lg">
             Ready to explore your next property opportunity? Contact our team today for personalized assistance.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col lg:flex-row gap-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+        >
           
           {/* Form Side */}
           <div className="lg:w-3/5 p-8 md:p-12">
@@ -105,7 +120,7 @@ export default function Contact() {
                 <button 
                   type="submit" 
                   disabled={formStatus === "submitting"}
-                  className="w-full py-4 bg-navy text-white font-bold rounded-md hover:bg-opacity-90 transition-all focus:ring-4 focus:ring-navy/20 disabled:bg-navy/70 text-lg shadow-md"
+                  className="w-full py-4 bg-gradient-navy text-white font-bold rounded-md shadow-lg hover-lift transition-all focus:ring-4 focus:ring-navy/20 disabled:bg-navy/70 text-lg"
                 >
                   {formStatus === "submitting" ? "Sending..." : "Submit Inquiry"}
                 </button>
@@ -182,8 +197,7 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          
-        </div>
+        </motion.div>
       </div>
     </section>
   );

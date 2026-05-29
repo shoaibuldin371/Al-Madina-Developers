@@ -2,6 +2,8 @@ import TopContactBar from "@/components/TopContactBar";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import PromoVideo from "@/components/PromoVideo";
+import PakArabVideo from "@/components/PakArabVideo";
 import ContactPersons from "@/components/ContactPersons";
 import Services from "@/components/Services";
 import FeaturedProperties from "@/components/FeaturedProperties";
@@ -20,6 +22,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <PromoVideo />
+      <PakArabVideo />
       <ContactPersons />
       <Services />
       <FeaturedProperties />

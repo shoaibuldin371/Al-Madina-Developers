@@ -47,9 +47,10 @@ export default function WhyChooseUs() {
             </p>
             
             <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-gold"
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-gold relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-[100px] pointer-events-none"></div>
               <p className="text-navy font-medium italic">
                 "Turning dreams into addresses with trust and professional guidance."
               </p>
@@ -67,14 +68,15 @@ export default function WhyChooseUs() {
               <motion.div 
                 variants={itemVariants}
                 key={index} 
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" }}
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all flex"
+                className="bg-white p-6 rounded-xl shadow-md border border-gray-100 transition-all flex group hover-lift-lg hover:shadow-xl hover:border-gold/30"
               >
-                <div className="flex-shrink-0 mr-4">
-                  <CheckCircleIcon className="w-8 h-8 text-gold" />
+                <div className="flex-shrink-0 mr-5">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center shadow-inner group-hover:bg-gradient-gold transition-all duration-300 transform group-hover:rotate-12">
+                    <CheckCircleIcon className="w-7 h-7 text-gold group-hover:text-white transition-colors duration-300" />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-navy mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-navy mb-2 group-hover:text-gold transition-colors duration-300">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>

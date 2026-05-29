@@ -24,7 +24,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative w-full h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-navy">
       {/* Background Image */}
       <motion.div 
         className="absolute inset-0 w-full h-full z-0"
@@ -41,9 +41,13 @@ export default function Hero() {
           sizes="100vw"
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </motion.div>
+
+      {/* Decorative Orbs */}
+      <div className="blob bg-gold w-[400px] h-[400px] rounded-full top-[-100px] right-[-100px] blur-[80px] opacity-20 pointer-events-none"></div>
+      <div className="blob bg-white w-[300px] h-[300px] rounded-full bottom-[-50px] left-[20%] blur-[80px] opacity-10 pointer-events-none" style={{ animationDelay: '2s' }}></div>
 
       <div className="container relative z-10 mx-auto px-4 max-w-7xl">
         <motion.div 
@@ -54,9 +58,9 @@ export default function Hero() {
         >
           <motion.span 
             variants={itemVariants}
-            className="inline-block py-1 px-3 rounded-full bg-gold/20 text-gold border border-gold/30 text-sm font-semibold tracking-wider mb-6 glass"
+            className="inline-block py-1.5 px-4 rounded-full bg-gold/10 text-gold border border-gold/30 text-sm font-semibold tracking-wider mb-6 glass-dark"
           >
-            PREMIUM REAL ESTATE
+            <span className="text-gradient">PREMIUM REAL ESTATE</span>
           </motion.span>
           
           <motion.h1 
@@ -81,7 +85,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#properties"
-              className="px-8 py-4 bg-gradient-gold text-white text-center font-semibold rounded-md hover:shadow-lg transition-all shadow-gold/20 border border-transparent"
+              className="px-8 py-4 bg-gradient-gold text-white text-center font-semibold rounded-md shadow-lg shadow-gold/20 hover-lift"
             >
               Explore Properties
             </motion.a>
@@ -91,7 +95,7 @@ export default function Hero() {
               href={`https://wa.me/${contact.primaryWhatsApp.replace(/\s+/g, "").replace(/^0/, "92")}`}
               target="_blank"
               rel="noreferrer"
-              className="px-8 py-4 bg-white/10 text-white text-center font-semibold rounded-md glass hover:bg-white/20 transition-all"
+              className="px-8 py-4 bg-white/10 text-white text-center font-semibold rounded-md glass hover:bg-white/20 transition-all hover-lift"
             >
               WhatsApp Now
             </motion.a>
@@ -99,7 +103,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={`tel:${contact.primaryNumber.replace(/\s+/g, "")}`}
-              className="px-8 py-4 bg-transparent text-white text-center font-semibold rounded-md border border-white hover:bg-white hover:text-navy transition-all"
+              className="px-8 py-4 bg-transparent text-white text-center font-semibold rounded-md border border-white/50 hover:bg-white hover:text-navy transition-all hover-lift"
             >
               Call Consultant
             </motion.a>
@@ -115,9 +119,9 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3">
               {hero.trustBadges.map((badge, index) => (
                 <motion.span
-                  whileHover={{ y: -2, backgroundColor: "rgba(255,255,255,0.15)" }}
+                  whileHover={{ y: -3, backgroundColor: "rgba(255,255,255,0.15)", borderColor: "rgba(212,175,55,0.5)" }}
                   key={index}
-                  className="px-3 py-1 bg-white/5 glass border border-white/10 rounded-full text-xs text-gray-200 cursor-default"
+                  className="px-4 py-1.5 bg-white/5 glass-dark border border-white/10 rounded-full text-xs text-gray-200 cursor-default transition-colors duration-300"
                 >
                   {badge}
                 </motion.span>

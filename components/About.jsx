@@ -20,25 +20,27 @@ export default function About() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:w-1/2 relative w-full"
           >
-            <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
-                className="w-full h-full"
-              >
-                <Image
-                  src="/assets/al-madinah/office-building.jpg"
-                  alt="Al-Madinah Office"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-navy/10 pointer-events-none"></div>
+            <div className="relative p-2 bg-white rounded-2xl shadow-xl hover-lift-lg border border-gray-100 z-10">
+              <div className="absolute inset-0 border-2 border-gold/30 rounded-2xl transform translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+              <div className="relative h-[500px] w-full rounded-xl overflow-hidden">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full h-full relative"
+                >
+                  <Image
+                    src="/assets/al-madinah/office-building.jpg"
+                    alt="Al-Madinah Office"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </motion.div>
+                <div className="absolute inset-0 bg-navy/10 pointer-events-none mix-blend-overlay"></div>
+              </div>
             </div>
             {/* Decorative element */}
-            <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-gold rounded-full opacity-20 blur-3xl z-0"></div>
-            <div className="absolute -top-8 -left-8 w-64 h-64 bg-navy rounded-full opacity-10 blur-3xl z-0"></div>
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-gold rounded-full opacity-10 blur-3xl z-0"></div>
           </motion.div>
 
           <motion.div 
@@ -55,9 +57,9 @@ export default function About() {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy mb-6 leading-tight">
-              About Al-Madinah <br className="hidden md:block" /> Real Estate and Builders
+              About <span className="text-gradient">Al-Madinah</span> <br className="hidden md:block" /> Real Estate & Builders
             </h2>
-            <div className="prose prose-lg text-gray-600 mb-8">
+            <div className="prose prose-lg text-gray-600 mb-8 relative z-10">
               <p className="mb-4">
                 Welcome to <strong>AL Madina Real Estate & Developer</strong>, your go-to
                 destination for dream homes and expert real estate guidance. We help clients
@@ -72,17 +74,34 @@ export default function About() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            {/* Feature Badges */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {['Trusted Guidance', 'Zaamin City Focus', 'Investment Support', 'Client First Approach'].map((feature, idx) => (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + (idx * 0.1) }}
+                  key={idx} 
+                  className="flex items-center space-x-2 bg-gray-50 px-3 py-2 rounded-lg border border-gray-100 shadow-sm"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                  <span className="text-sm font-medium text-navy">{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href={bilal.whatsappLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-navy text-white font-medium rounded-md hover:shadow-lg transition-all shadow-md group"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-navy text-white font-medium rounded-md shadow-lg shadow-navy/20 group hover-lift"
               >
                 Contact M. Bilal
-                <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-gold" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -90,10 +109,10 @@ export default function About() {
                 href={aslam.whatsappLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-navy border border-gray-200 font-medium rounded-md hover:bg-gray-50 hover:border-gold transition-all shadow-sm group"
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-navy border border-gray-200 font-medium rounded-md hover:border-gold shadow-sm group hover-lift"
               >
                 Contact Raja Aslam
-                <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-gold" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -101,7 +120,7 @@ export default function About() {
                 href={contact.googleMapsSearch}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-navy font-medium underline hover:text-gold transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-navy font-medium underline hover:text-gold transition-colors"
               >
                 Visit Office
               </motion.a>

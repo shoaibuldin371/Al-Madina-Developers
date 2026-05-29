@@ -55,6 +55,23 @@ export default function FeaturedProperties() {
           </motion.a>
         </motion.div>
 
+
+
+        {/* UI Filter Pills (Design Element) */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-wrap gap-2 mb-10 pb-4 border-b border-gray-200"
+        >
+          {['All Properties', 'Plots', 'Houses', 'Commercial', 'Installment Plans', 'Zaamin City'].map((pill, idx) => (
+            <button key={idx} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${idx === 0 ? 'bg-navy text-white shadow-md' : 'bg-white text-gray-600 border border-gray-200 hover:border-gold hover:text-navy'}`}>
+              {pill}
+            </button>
+          ))}
+        </motion.div>
+
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -66,21 +83,20 @@ export default function FeaturedProperties() {
             <motion.div 
               variants={itemVariants}
               key={property.id} 
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col h-full group"
+              className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col h-full group hover-lift-lg hover:border-gold/30"
             >
               {/* Image Container with object-contain to preserve flyer text */}
-              <div className="relative h-72 w-full bg-gray-100 p-2 overflow-hidden">
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+              <div className="relative h-72 w-full bg-gray-50 p-2 overflow-hidden border-b border-gray-100">
+                <div className="absolute inset-0 bg-navy/5 group-hover:bg-navy/20 transition-colors z-10 pointer-events-none duration-500"></div>
                 <Image
                   src={property.image}
                   alt={property.title}
                   fill
-                  className="object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain group-hover:scale-[1.03] transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="px-3 py-1 bg-gradient-gold text-white text-xs font-bold uppercase tracking-wider rounded shadow-md">
+                  <span className="px-3 py-1.5 bg-gradient-gold text-white text-xs font-bold uppercase tracking-wider rounded shadow-md backdrop-blur-sm border border-white/20">
                     {property.badge}
                   </span>
                 </div>

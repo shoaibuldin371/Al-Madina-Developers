@@ -1,14 +1,35 @@
+"use client";
 import { siteData } from "@/data/siteData";
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ChatBubbleLeftEllipsisIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 export default function ContactPersons() {
   const { contact } = siteData;
   const { persons } = contact;
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
-    <section className="py-20 bg-gray-50 border-t border-gray-100">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+    <section className="py-20 bg-gray-50 border-t border-gray-100 relative overflow-hidden">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <span className="text-gold font-semibold uppercase tracking-wider text-sm mb-2 block">
             Expert Guidance
           </span>
@@ -18,11 +39,17 @@ export default function ContactPersons() {
           <p className="text-gray-600">
             Get in touch with our dedicated professionals who can help you find the perfect property or investment.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {/* Main Office Card */}
-          <div className="bg-navy rounded-2xl p-8 shadow-xl text-white flex flex-col h-full relative overflow-hidden group hover:shadow-2xl transition-shadow">
+          <motion.div variants={itemVariants} className="bg-gradient-navy rounded-2xl p-8 shadow-xl text-white flex flex-col h-full relative overflow-hidden group hover:shadow-2xl transition-shadow hover-lift">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16"></div>
             
             <div className="mb-6 relative z-10">
@@ -75,11 +102,11 @@ export default function ContactPersons() {
                 Messenger
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Individual Consultants */}
           {persons.map((person) => (
-            <div key={person.id} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex flex-col h-full hover:shadow-xl transition-shadow group relative overflow-hidden">
+            <motion.div variants={itemVariants} key={person.id} className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex flex-col h-full hover:shadow-xl transition-shadow group relative overflow-hidden hover-lift-lg">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-110 transition-transform duration-500"></div>
               
               <div className="mb-6 relative z-10">
@@ -115,9 +142,9 @@ export default function ContactPersons() {
                   WhatsApp
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
