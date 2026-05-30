@@ -2,9 +2,11 @@
 import Image from "next/image";
 import { siteData } from "@/data/siteData";
 import { motion } from "framer-motion";
+import { usePostHog } from 'posthog-js/react';
 
 export default function InstallmentPlans() {
   const { installmentPlans, contact } = siteData;
+  const posthog = usePostHog();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -80,9 +82,11 @@ export default function InstallmentPlans() {
                   {plan.details}
                 </p>
                 <a
-                  href={`https://wa.me/${contact.primaryWhatsApp.replace(/\s+/g, "").replace(/^0/, "92")}`}
+                  href="https://wa.me/923004873647?text=Hello%20Al%20Madina%20Developers%2C%20I%20am%20interested%20in%20your%20property%20services.%20Please%20share%20more%20details."
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => posthog?.capture('whatsapp_clicked', { button_location: 'installment_plans', plan_title: plan.title, brand_name: 'Al Madina Developers' })}
+                  aria-label={`Get Booking Details for ${plan.title}`}
                   className="inline-block px-8 py-3 bg-gradient-gold text-white font-semibold rounded shadow-lg shadow-gold/20 hover-lift transition-all"
                 >
                   Get Booking Details

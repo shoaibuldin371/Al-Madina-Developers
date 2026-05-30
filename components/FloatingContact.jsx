@@ -2,9 +2,11 @@
 import { siteData } from "@/data/siteData";
 import { PhoneIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import { usePostHog } from 'posthog-js/react';
 
 export default function FloatingContact() {
   const { contact } = siteData;
+  const posthog = usePostHog();
 
   return (
     <div className="fixed bottom-6 z-50 w-full pointer-events-none px-6">
@@ -20,7 +22,8 @@ export default function FloatingContact() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, type: "spring", stiffness: 200, damping: 10 }}
             whileHover={{ scale: 1.1 }}
-            href={`tel:${contact.primaryNumber.replace(/\s+/g, "")}`}
+            href="tel:+923004873647"
+            onClick={() => posthog?.capture('call_clicked', { button_location: 'floating_contact', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
             className="w-14 h-14 bg-gradient-navy text-white rounded-full flex items-center justify-center shadow-lg group border border-white/20"
             aria-label="Call Now"
           >
@@ -42,9 +45,10 @@ export default function FloatingContact() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 10 }}
             whileHover={{ scale: 1.1 }}
-            href={`https://wa.me/${contact.primaryWhatsApp.replace(/\s+/g, "").replace(/^0/, "92")}`}
+            href="https://wa.me/923004873647?text=Hello%20Al%20Madina%20Developers%2C%20I%20am%20interested%20in%20your%20property%20services.%20Please%20share%20more%20details."
             target="_blank"
             rel="noreferrer"
+            onClick={() => posthog?.capture('whatsapp_clicked', { button_location: 'floating_contact', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
             className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg group border border-white/20 relative"
             aria-label="WhatsApp"
           >

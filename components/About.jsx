@@ -30,7 +30,7 @@ export default function About() {
                 >
                   <Image
                     src="/assets/al-madinah/office-building.jpg"
-                    alt="Al-Madina Developers Office"
+                    alt="Al Madina Developers Office"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -57,11 +57,11 @@ export default function About() {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy mb-6 leading-tight">
-              About <span className="text-gradient">Al-Madina Developers</span>
+              About <span className="text-gradient">Al Madina Developers</span>
             </h2>
             <div className="prose prose-lg text-gray-600 mb-8 relative z-10">
               <p className="mb-4">
-                Welcome to <strong>Al-Madina Developers</strong>, your go-to
+                Welcome to <strong>Al Madina Developers</strong>, your go-to
                 destination for dream homes and expert property guidance. We help clients
                 explore residential plots, houses, rental properties, commercial
                 opportunities, and investment options with confidence.

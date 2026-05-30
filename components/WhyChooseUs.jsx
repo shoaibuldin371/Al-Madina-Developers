@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
               Our Advantages
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy mb-6 leading-tight">
-              Why Choose Al-Madina Developers
+              Why Choose Al Madina Developers
             </h2>
             <p className="text-gray-600 mb-8 text-lg">
               We stand out in the property market by providing focused expertise, clear communication, and a commitment to helping you make the best property decisions.

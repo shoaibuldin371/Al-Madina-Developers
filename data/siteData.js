@@ -1,12 +1,12 @@
 export const siteData = {
   company: {
-    name: "Al-Madina Developers",
-    type: "Developers Company",
+    name: "Al Madina Developers",
+    type: "Real Estate and Property Development Company",
     logo: "/assets/al-madinah/logo.jpg",
     aboutShort:
-      "Welcome to Al-Madina Developers! Your go-to destination for dream homes and expert property guidance. Join us on the journey of turning dreams into addresses.",
+      "Welcome to Al Madina Developers! Your go-to destination for dream homes and expert property guidance. Join us on the journey of turning dreams into addresses.",
     aboutProfessional:
-      "Al-Madina Developers helps clients explore residential plots, houses, rental properties, commercial opportunities, and investment options with trusted property guidance. The company focuses on clear communication, professional support, and helping clients make confident property decisions.",
+      "Al Madina Developers helps clients explore residential plots, houses, rental properties, commercial opportunities, construction guidance, and investment options with professional real estate support.",
   },
   contact: {
     primaryNumber: "0300 4873647",
@@ -14,7 +14,7 @@ export const siteData = {
     email: "almadinaaestate@gmail.com",
     officeLocation:
       "Office No. 21, C Block, Main Boulevard, Zaamin City, Lahore, 54000",
-    messengerName: "Al-Madina Developers & Builders",
+    messengerName: "Al Madina Estate & Builders",
     messengerLink: "https://m.me/almadinaaestate",
     facebookLink: "https://www.facebook.com/almadinaaestate/",
     googleMapsSearch:
@@ -25,7 +25,7 @@ export const siteData = {
         name: "M. Bilal",
         role: "Property Consultant",
         phone: "+92 318 4414063",
-        whatsappLink: "https://wa.me/923184414063",
+        whatsappLink: "https://wa.me/923184414063?text=Hello%20Al%20Madina%20Developers%2C%20I%20am%20interested%20in%20your%20property%20services.%20Please%20share%20more%20details.",
         callLink: "tel:+923184414063",
       },
       {
@@ -33,17 +33,17 @@ export const siteData = {
         name: "Raja Aslam",
         role: "Property Advisor",
         phone: "+92 300 4873647",
-        whatsappLink: "https://wa.me/923004873647",
+        whatsappLink: "https://wa.me/923004873647?text=Hello%20Al%20Madina%20Developers%2C%20I%20am%20interested%20in%20your%20property%20services.%20Please%20share%20more%20details.",
         callLink: "tel:+923004873647",
       },
     ],
   },
   hero: {
-    heading: "Find Your Dream Property with Al-Madina Developers",
+    heading: "Find Your Dream Property with Al Madina Developers",
     subheading:
-      "Your trusted destination for dream homes, residential plots, commercial opportunities, rental properties, and expert property guidance.",
+      "Your trusted destination for dream homes, residential plots, commercial opportunities, rental properties, and expert real estate guidance.",
     description:
-      "Al-Madina Developers helps clients explore property opportunities in Zaamin City and surrounding Lahore locations with clear guidance, professional support, and reliable communication.",
+      "Al Madina Developers helps clients explore property opportunities in Zaamin City and surrounding Lahore locations with clear guidance, professional support, and reliable communication.",
     image: "/assets/al-madinah/office-building.jpg",
     trustBadges: [
       "Residential Plots",

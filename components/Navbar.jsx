@@ -5,11 +5,13 @@ import Link from "next/link";
 import { siteData } from "@/data/siteData";
 import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePostHog } from 'posthog-js/react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { company, contact } = siteData;
+  const posthog = usePostHog();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +56,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-lg md:text-xl font-bold text-navy leading-tight">
-              Al-Madina Developers
+              Al Madina Developers
             </span>
             
           </div>
@@ -79,9 +81,11 @@ export default function Navbar() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href={`https://wa.me/${contact.primaryWhatsApp.replace(/\s+/g, "").replace(/^0/, "92")}`}
+            href="https://wa.me/923004873647?text=Hello%20Al%20Madina%20Developers%2C%20I%20am%20interested%20in%20your%20property%20services.%20Please%20share%20more%20details."
             target="_blank"
             rel="noreferrer"
+            onClick={() => posthog?.capture('whatsapp_clicked', { button_location: 'navbar_desktop', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
+            aria-label="Contact via WhatsApp"
             className="px-5 py-2.5 text-sm font-semibold text-navy border-2 border-navy rounded-full hover:bg-navy hover:text-white transition-all duration-300 flex items-center hover-lift group"
           >
             <svg className="w-4 h-4 mr-2 text-[#25D366] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -92,7 +96,9 @@ export default function Navbar() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href={`tel:${contact.primaryNumber.replace(/\s+/g, "")}`}
+            href="tel:+923004873647"
+            onClick={() => posthog?.capture('call_clicked', { button_location: 'navbar_desktop', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
+            aria-label="Call Now"
             className="flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-gold rounded-full shadow-lg shadow-gold/30 hover:shadow-gold/50 transition-all hover-lift"
           >
             <PhoneIcon className="w-4 h-4 mr-2" />
@@ -147,15 +153,19 @@ export default function Navbar() {
                 className="flex flex-col space-y-3 pt-2"
               >
                 <a
-                  href={`https://wa.me/${contact.primaryWhatsApp.replace(/\s+/g, "").replace(/^0/, "92")}`}
+                  href="https://wa.me/923004873647?text=Hello%20Al%20Madina%20Developers%2C%20I%20am%20interested%20in%20your%20property%20services.%20Please%20share%20more%20details."
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => posthog?.capture('whatsapp_clicked', { button_location: 'navbar_mobile', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
+                  aria-label="Contact via WhatsApp"
                   className="w-full text-center px-4 py-3 text-sm font-medium text-navy border border-navy rounded-md"
                 >
                   WhatsApp
                 </a>
                 <a
-                  href={`tel:${contact.primaryNumber.replace(/\s+/g, "")}`}
+                  href="tel:+923004873647"
+                  onClick={() => posthog?.capture('call_clicked', { button_location: 'navbar_mobile', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
+                  aria-label="Call Now"
                   className="w-full flex justify-center items-center px-4 py-3 text-sm font-medium text-white bg-gradient-gold rounded-md"
                 >
                   <PhoneIcon className="w-5 h-5 mr-2" />

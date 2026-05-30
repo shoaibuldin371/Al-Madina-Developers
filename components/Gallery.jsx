@@ -4,10 +4,12 @@ import Image from "next/image";
 import { siteData } from "@/data/siteData";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon, MagnifyingGlassPlusIcon } from "@heroicons/react/24/outline";
+import { usePostHog } from 'posthog-js/react';
 
 export default function Gallery() {
   const { galleryImages } = siteData;
   const [selectedImage, setSelectedImage] = useState(null);
+  const posthog = usePostHog();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -69,7 +71,10 @@ export default function Gallery() {
               <motion.div 
                 variants={itemVariants}
                 key={index} 
-                onClick={() => setSelectedImage(src)}
+                onClick={() => {
+                  setSelectedImage(src);
+                  posthog?.capture('gallery_image_clicked', { image_url: src, brand_name: 'Al Madina Developers' });
+                }}
                 className={`relative rounded-xl overflow-hidden group cursor-pointer ${spanClass} bg-gray-800 shadow-lg hover:shadow-gold/20 hover:z-10`}
               >
                 <div className="absolute inset-0 border border-white/10 rounded-xl z-20 pointer-events-none group-hover:border-gold/50 transition-colors duration-500"></div>

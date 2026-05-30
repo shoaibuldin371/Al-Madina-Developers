@@ -38,7 +38,7 @@ export default function Location() {
           <div className="lg:w-1/3 p-10 bg-gradient-navy text-white flex flex-col justify-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
-            <h3 className="text-2xl font-bold font-serif mb-8 text-gold relative z-10">Al-Madina Developers</h3>
+            <h3 className="text-2xl font-bold font-serif mb-8 text-gold relative z-10">Al Madina Developers</h3>
             
             <div className="space-y-8 relative z-10">
               <div className="flex items-start">

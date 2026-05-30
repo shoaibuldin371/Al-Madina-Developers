@@ -3,15 +3,23 @@ import { useState } from "react";
 import { siteData } from "@/data/siteData";
 import { PhoneIcon, ChatBubbleLeftEllipsisIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import { usePostHog } from 'posthog-js/react';
 
 export default function Contact() {
   const { contact } = siteData;
   const [formStatus, setFormStatus] = useState("idle"); // idle, submitting, success
+  const posthog = usePostHog();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormStatus("submitting");
     
+    posthog?.capture('contact_form_submitted', {
+      property_interest: document.getElementById('interest').value,
+      budget_range: document.getElementById('budget').value,
+      brand_name: 'Al Madina Developers'
+    });
+
     // Simulate frontend form submission
     setTimeout(() => {
       setFormStatus("success");
@@ -40,7 +48,7 @@ export default function Contact() {
             Get In Touch
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy mb-6">
-            Contact Al-Madina Developers
+            Contact Al Madina Developers
           </h2>
           <p className="text-gray-600 text-lg">
             Ready to explore your next property opportunity? Contact our team today for personalized assistance.
@@ -137,7 +145,9 @@ export default function Contact() {
 
             <div className="space-y-4 flex-grow relative z-10">
               <a
-                href={`tel:${contact.primaryNumber.replace(/\s+/g, "")}`}
+                href="tel:+923004873647"
+                onClick={() => posthog?.capture('call_clicked', { button_location: 'contact_section', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
+                aria-label="Call Now"
                 className="flex items-center w-full p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors group"
               >
                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4 group-hover:bg-gold transition-colors">
@@ -150,9 +160,11 @@ export default function Contact() {
               </a>
 
               <a
-                href={`https://wa.me/${contact.primaryWhatsApp.replace(/\s+/g, "").replace(/^0/, "92")}`}
+                href="https://wa.me/923004873647?text=Hello%20Al%20Madina%20Developers%2C%20I%20am%20interested%20in%20your%20property%20services.%20Please%20share%20more%20details."
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => posthog?.capture('whatsapp_clicked', { button_location: 'contact_section_main', contact_number: '+923004873647', brand_name: 'Al Madina Developers' })}
+                aria-label="Contact via WhatsApp"
                 className="flex items-center w-full p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-[#25D366]/20 transition-colors group"
               >
                 <div className="w-12 h-12 bg-[#25D366]/20 rounded-full flex items-center justify-center mr-4 group-hover:bg-[#25D366] transition-colors">
@@ -170,6 +182,8 @@ export default function Contact() {
                 href={contact.persons[0].whatsappLink}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => posthog?.capture('whatsapp_clicked', { button_location: 'contact_section_bilal', contact_number: contact.persons[0].phone, brand_name: 'Al Madina Developers' })}
+                aria-label="Contact M. Bilal via WhatsApp"
                 className="flex items-center w-full p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-[#25D366]/20 transition-colors group"
               >
                 <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-4 group-hover:bg-white/20 transition-colors text-xs font-bold">
@@ -185,6 +199,8 @@ export default function Contact() {
                 href={contact.messengerLink}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => posthog?.capture('messenger_clicked', { button_location: 'contact_section', brand_name: 'Al Madina Developers' })}
+                aria-label="Contact via Messenger"
                 className="flex items-center w-full p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-[#0084FF]/20 transition-colors group"
               >
                 <div className="w-12 h-12 bg-[#0084FF]/20 rounded-full flex items-center justify-center mr-4 group-hover:bg-[#0084FF] transition-colors">
@@ -192,7 +208,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wide">Messenger</p>
-                  <p className="font-bold text-lg">Al-Madina Developers</p>
+                  <p className="font-bold text-lg">Al Madina Developers</p>
                 </div>
               </a>
             </div>
